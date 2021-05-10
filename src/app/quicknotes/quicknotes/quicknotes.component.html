@@ -1,0 +1,32 @@
+
+<!-- Div for Heading to the Program -->
+<div class= "container-fluid">
+    <div class="row bg-success justify-content-center">
+        <div class="col-3"></div>
+        <div class="col-6 text-light h2"> Quick Notess</div>
+    </div>
+</div>
+
+<!-- Div for taking inputs from the user -->
+
+<div class="row mt-1" style="height: 80px;">
+    <div class="col-3 d-none col-md-3 block"></div>
+    <div class="col-12 col-md-6 bg-success d-flex justify-content-center text-light h3">
+      Enter Notes:  <input type="='text"  [(ngModel)] ="newTask">
+        <div class="col-1"></div>
+
+        <button class="btn btn-light text-success" (click) = "addToList()"> Add task </button>
+    </div>
+</div>
+<div class="col-3 d-none col-md-3 d-md-block"></div>
+
+
+<!-- Repeat the div when item added -->
+
+<div *ngFor="let x of items; let index = index" class="row mt-1" style="height:100px">
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+    <div class="col-12 col-md-6 bg-success d-flex justify-content-center text-light"></div>
+    <div class="col-9 text-ligt h3">{{x}}</div>
+    <input (click)="deleteTask(index)" type="button"
+    value="Delete" class="col-2 btn btn-danger">
+</div>
